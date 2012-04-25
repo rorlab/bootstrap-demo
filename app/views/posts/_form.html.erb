@@ -1,0 +1,23 @@
+<%= form_for(@post, :html =>{ :class => "form-horizontal"}) do |f| %>
+
+  <fieldset class="control-group">
+    <legend><%=controller.action_name.capitalize%> Post</legend>
+    <div class="control-group">
+      <%= f.label :title, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :title, :class => "text_field span6" %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :content, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_area :content, :class => "text_field span6" %>
+      </div>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, :class => "btn btn-primary" %>
+      <%= link_to "Cancel", posts_path, :class => "btn" %>
+    </div>
+  </fieldset>
+
+<% end %>
