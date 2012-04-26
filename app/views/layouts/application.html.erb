@@ -15,15 +15,10 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="#">Project name</a>
+        <a class="brand" href="#">Bootstrap-Demo</a>
         <div class="nav-collapse">
           <ul class="nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
+            <li><a href="#"><i class="icon-home icon-white"></i>Home</a></li>
             <li><a href="#">Link</a></li>
             <li><a href="#">Link</a></li>
             <li><a href="#">Link</a></li>
@@ -33,17 +28,19 @@
     </div>
   </div>
   <div class="container">
+    <% flash.each do |name, msg| %>
+    <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+       <a class="close" data-dismiss="alert"><i class="icon-remove"></i></a>
+       <%= msg  %>
+    </div>
+    <% end %>
     <div class="row-fluid">
-      <div class="span3">
-        left span2
-
-      </div>
       <div class="span9">
         <%= yield %>
       </div>
+      <div class="span3">
+      </div>
     </div>
-
-</div>
-
+  </div>
 </body>
 </html>
